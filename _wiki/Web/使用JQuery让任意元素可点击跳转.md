@@ -14,7 +14,7 @@ categories: Web
 
 ```html
 <tbody>
-  <tr class="clickable" data-href="http://blog.ruterly.com">
+  <tr class="clickable" data-href="http://ruterly.com">
     <td></td>
     <td></td>
     <td></td>

@@ -135,7 +135,7 @@ API 返回的是 JSON 编码的对象，散列键和值都是大小写敏感的�
 | favorites     | 总收藏量。                                    |
 | likes         | 总点赞量。                                    |
 | comments      | 总评论数。                                    |
-| user_id, user | 图片贡献者的用户 ID 和名字。个人资料链接：[ https://pixabay.com/users/{ USERNAME }-{ ID }/](http://blog.ruterly.com/2017/07/02/Pixabay-API-translate-and-application/#) |
+| user_id, user | 图片贡献者的用户 ID 和名字。个人资料链接：[ https://pixabay.com/users/{ USERNAME }-{ ID }/](http://ruterly.com/2017/07/02/Pixabay-API-translate-and-application/#) |
 | userImageURL  | 用户头像链接（250 x 250 px）。                    |
 
 ### 示例 2：高分辨率图片搜索 (需要许可)
@@ -309,7 +309,7 @@ b) 用哈希 ID 获取高分辨率的图片；响应参考示例 2。
 | favorites     | 总收藏量。                                    |
 | likes         | 总点赞量。                                    |
 | comments      | 总评论数。                                    |
-| user_id, user | 贡献者的用户 ID 和名字。个人资料链接：[ https://pixabay.com/users/{ USERNAME }-{ ID }/](http://blog.ruterly.com/2017/07/02/Pixabay-API-translate-and-application/#) |
+| user_id, user | 贡献者的用户 ID 和名字。个人资料链接：[ https://pixabay.com/users/{ USERNAME }-{ ID }/](http://ruterly.com/2017/07/02/Pixabay-API-translate-and-application/#) |
 | userImageURL  | 用户头像链接（250 x 250 px）。                    |
 
 ## JavaScript 示例
@@ -339,6 +339,6 @@ $.getJSON(URL, function(data){
 
 **声明：**本站的所有文章，都采用[知识共享署名-非商业性使用-禁止演绎 3.0 中国大陆许可协议](http://creativecommons.org/licenses/by-nc-nd/3.0/cn/)进行许可。
 
-**注意：**若未作说明，则本文为「[**TNK**](http://blog.ruterly.com/)」原创。转载务必注明[出处](http://blog.ruterly.com/2017/07/02/Pixabay-API-Translation/)。
+**注意：**若未作说明，则本文为「[**TNK**](http://ruterly.com/)」原创。转载务必注明[出处](http://ruterly.com/2017/07/02/Pixabay-API-Translation/)。
 
-本文永久地址：http://blog.ruterly.com/2017/07/02/Pixabay-API-Translation/
+本文永久地址：http://ruterly.com/2017/07/02/Pixabay-API-Translation/

@@ -1,7 +1,7 @@
     <footer class="container">
         <div class="site-footer" role="contentinfo">
             <div class="copyright left mobile-block">
-                    © 2015
+                    © 2018
                     <span title="{{ site.author}}">{{ site.author }}</span>
                     <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a>
             </div>
@@ -20,6 +20,9 @@
                     <a href="{{ site.url }}{{ nav.href }}" title="{{ nav.label }}" target="{{ nav.target | default: _self }}">{{ nav.label }}</a>
                 </li>
                 {% endfor %}
+		<li>
+		    <a href="{{ site.url }}/sitemap.xml" title="网站地图" target="_blank">网站地图</a>
+		</li>
                 <li><a href="{{ site.url }}{{ site.subscribe_rss }}"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
             </ul>
 

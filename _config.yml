@@ -2,12 +2,12 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://mazhuang.org
+url: http://ruterly.com
 date_format: "ordinal"
-title: 码志
-subtitle: "打码改变人生"
-description: "马壮的个人博客"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang
+title: TNK
+subtitle: "Ruter's Blog"
+description: "Ruter 的个人博客"
+keywords: Ruter, TNK, Ruter's, technical
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -15,12 +15,12 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
-organization: zkh360.com
-organization_url: http://www.zkh360.com
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+author: Ruter
+organization: 
+organization_url: 
+github_username: ruter
+location: Shenzhen, China
+email: i@ruterly.com
 
 # ---------------- #
 #    Navigation    #
@@ -77,7 +77,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: mzlogin/mzlogin.github.io
+repository: ruter/TNK-Blog
 
 # ---------------- #
 #      Comments    #
@@ -91,17 +91,17 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mzlogin
-    repo: blog-comments
+    owner: ruter
+    repo: TNK-Comments
     oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+        client_id: dfb2389dad5c72514ed6
+        client_secret: b33025a7e7a90226db5c179273970c4b96c7ee96
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
-    repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    owner: ruter
+    repo: TNK-Comments
+    clientID: dfb2389dad5c72514ed6
+    clientSecret: b33025a7e7a90226db5c179273970c4b96c7ee96
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -118,4 +118,4 @@ simple_jekyll_search:
 #    Analytics     #
 # ---------------- #
 google:
-    analytics_id: UA-80669434-1
+    analytics_id: 

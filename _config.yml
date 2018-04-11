@@ -16,7 +16,7 @@ side_bar_repo_limit: 5
 #      Author      #
 # ---------------- #
 author: Ruter
-organization: 
+organization: SundayStart Studio
 organization_url: 
 github_username: ruter
 location: Shenzhen, China
@@ -118,4 +118,4 @@ simple_jekyll_search:
 #    Analytics     #
 # ---------------- #
 google:
-    analytics_id: 
+    analytics_id: UA-117326683-1

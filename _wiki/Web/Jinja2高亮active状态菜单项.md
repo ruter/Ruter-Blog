@@ -3,6 +3,7 @@ layout: wiki
 title: "Jinja2高亮active状态菜单项"
 date: 2017-02-23 21:51
 keywords: Jinja2
+categories: Web
 ---
 
 通常我们网站的导航条选项都会有`active`属性以明显提示我们所处在哪个菜单项之下，在`Jinja2`中要实现这样的效果并不难做到。

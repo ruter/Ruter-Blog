@@ -3,7 +3,7 @@ layout: wiki
 title: "使用JQuery让任意元素可点击跳转"
 date: 2017-02-25 10:21
 keywords: Javascript, JQuery, HTML, clickable
-categories: Tool
+categories: Web
 ---
 
 在做页面的时候，可能会遇到要让某些非`a`标签的元素可以被点击并实现类似`a`标签的链接跳转功能，例如要让一个`table`的行可以点击并跳转，我们可以利用JS进行实现。

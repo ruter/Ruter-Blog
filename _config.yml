@@ -36,11 +36,11 @@ navs:
 
   -
     href: /wiki/
-    label: 维基
+    label: Wiki
 
   -
     href: /links/
-    label: 链接
+    label: 友链
 
   -
     href: /about/

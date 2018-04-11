@@ -4,11 +4,11 @@ title: Wiki
 description: 人越学越觉得自己无知
 keywords: 维基, Wiki
 comments: false
-menu: 维基
+menu: Wiki
 permalink: /wiki/
 ---
 
-> 记多少命令和快捷键会让脑袋爆炸呢？
+> 好记性不如烂笔头，总是记不住不如写下来
 
 <ul class="listing">
 {% for wiki in site.wiki %}

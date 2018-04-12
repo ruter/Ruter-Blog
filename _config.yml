@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: //ruterly.com
+url: https://ruterly.com
 date_format: "ordinal"
 title: TNK
 subtitle: "Ruter's Blog"

@@ -28,6 +28,8 @@ keywords: 玩物志, Outline
 
 在开始体验和创建你的个人 Outline 服务之前，请确保你已经有一个可用的，并且支持 Docker 的服务器，如果没有，那没关系，你可以去购买一个新的 VPS 主机，Outline 官方也提到了，现在的 VPS 主机基本只需要 5 美元一个月，你可以选择使用 [DigitalOcean](https://www.digitalocean.com/), [Linode](https://www.linode.com/) 或者 [Vultr](https://www.vultr.com/?ref=6963885). 我个人目前在使用的是 [Vultr](https://www.vultr.com/?ref=6963885) 家 5 美元每月的计划，其余两家我没有使用过，个人推荐的话我也会推荐你使用 [Vultr](https://www.vultr.com/?ref=6963885) 家的，不仅可以使用支付宝支付，而且迈阿密（Miami）机房的机子还有 2.5 美金每月的计划。
 
+注：如果你是新注册 Vultr，可以使用 `NGINX20` 这个优惠码，注册后会赠送20美元余额。
+
 OK，如果你已经准备好了，接下来要做的事情就显得十分简单了。首先要去 Outline 的官网或者 GitHub 仓库，将 Outline Manager 和 Outline 分别下载好，传送门在下面：
 
 - [Outline 官网](https://getoutline.org/en/home)
@@ -85,3 +87,13 @@ Outline 还只是个新生的项目，即使是谷歌的同门，也不可能一
 - [Outline 官网](https://getoutline.org/en/home)
 - [Outline GitHub 仓库](https://github.com/Jigsaw-Code/outline-client)
 - [Outline Manager GitHub 仓库](https://github.com/Jigsaw-Code/outline-server)
+
+---
+
+![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/3.0/cn/88x31.png)
+
+**声明：**本站的所有文章，都采用[知识共享署名-非商业性使用-禁止演绎 3.0 中国大陆许可协议](http://creativecommons.org/licenses/by-nc-nd/3.0/cn/)进行许可。
+
+**注意：**若未作说明，则本文为「[**TNK**](https://ruterly.com/)」原创。转载务必注明[出处](https://ruterly.com/2018/04/12/Outline-developed-by-Jigsaw/)。
+
+本文永久地址：https://ruterly.com/2018/04/12/Outline-developed-by-Jigsaw/

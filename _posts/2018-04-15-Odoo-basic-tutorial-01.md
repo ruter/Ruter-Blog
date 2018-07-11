@@ -142,7 +142,9 @@ export PATH="/Users/name/Library/Python/3.6/bin:$PATH"
 
 `Odoo` 有两个版本，一个是社区版，一个是企业版，社区版是开源免费的，企业版当然是相应需要收费的，两个版本会有一些差异，但是这些问题不大，我们拉取官方仓库的社区版源码：
 
+```shell
 git clone [https://github.com/odoo/odoo.git](https://github.com/odoo/odoo.git) -b 11.0 --depth=1
+```
 
 因为众所周知的网络问题可能速度会比较慢，耐心等待拉取完成后，进入源码目录 `cd odoo`，可以看到第一层目录结构如下：
 

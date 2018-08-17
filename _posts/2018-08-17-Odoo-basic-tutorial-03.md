@@ -14,18 +14,20 @@ keywords: Odoo, Tutorial, 基础教程
 
 在上一篇教程中，我们已经创建好了待办事项的模型，但是只是添加了「描述」和「已完成？」两个字段，这肯定是不能满足我们的需求的。现在我们来给待办事项增加一个「紧急程度」的字段，用来表示当前任务的优先级。
 
-    # models.py
-    class TodoTask(models.Model):
-        _name = 'todo.task'
-        _description = '待办事项'
-    
-        name = fields.Char('描述', required=True)
-        is_done = fields.Boolean('已完成？')
-        priority = fields.Selection([
-            ('todo', '待办'),
-            ('normal', '普通'),
-            ('urgency', '紧急')
-        ], default='todo', string='紧急程度')
+```python
+# models.py
+class TodoTask(models.Model):
+    _name = 'todo.task'
+    _description = '待办事项'
+
+    name = fields.Char('描述', required=True)
+    is_done = fields.Boolean('已完成？')
+    priority = fields.Selection([
+        ('todo', '待办'),
+        ('normal', '普通'),
+        ('urgency', '紧急')
+    ], default='todo', string='紧急程度')
+```
 
 我们添加了一个 `Selection` 类型的字段 `priority`，并且指定了三个可供选择的程度类型，一般情况下，**如果一个字段只有固定的几种可选值，通常都会选择使用 `Selection` 字段**，它接受一个元组列表作为参数，其中元组的组成为 `(value, string)`，左边的是数据库中存储的值，右边的是一个用于界面显示的描述。
 
@@ -33,7 +35,9 @@ keywords: Odoo, Tutorial, 基础教程
 
 在上一篇教程中我们提到过，在对模型进行改动之后，需要对模块进行升级才能看到变更后的样子，除了从应用列表中找到模块进行升级外，我们还可以在命令行中给 Odoo 的启动命令加上参数 `-u todo` 指定升级 todo 模块。
 
-    ./odoo-bin --addons-path=addons,../mymodules --db-filter=^demo$ -d demo -u todo
+```shell
+./odoo-bin --addons-path=addons,../mymodules --db-filter=^demo$ -d demo -u todo
+```
 
 ![紧急程度](/images/Odoo/form-urgency.png)
 
@@ -43,19 +47,23 @@ keywords: Odoo, Tutorial, 基础教程
 
 我们已经给待办事项加上紧急程度了，可是光有这个还不够，我们还要给它加上截止时间，毕竟 deadline 是第一生产力呀！
 
-    # models.py
-    deadline = fields.Datetime(u'截止时间')
+```python
+# models.py
+deadline = fields.Datetime(u'截止时间')
+```
 
 我们把截止日期也放到 TreeView 中，方便查看各个任务的 deadline
 
-    <!-- views.xml -->
-    <field name="arch" type="xml">
-        <tree string="Todo">
-            <field name="name"/>
-            <field name="deadline"/>
-            <field name="is_done"/>
-        </tree>
-    </field>
+```xml
+<!-- views.xml -->
+<field name="arch" type="xml">
+    <tree string="Todo">
+        <field name="name"/>
+        <field name="deadline"/>
+        <field name="is_done"/>
+    </tree>
+</field>
+```
 
 ![截止日期](/images/Odoo/form-deadline.png)
 
@@ -65,14 +73,16 @@ keywords: Odoo, Tutorial, 基础教程
 
 这个需求跟时间有关，并且时间是流动（一直在变化）的，所以我们应该要有一个方法在用户每次打开待办事项之前，把这个结果计算好，并且反馈给用户，还好 Odoo 的 ORM 已经为我们实现了相关的机制——计算字段（`Computed fields`）
 
-    # models.py
-    is_expired = fields.Boolean(u'已过期', compute='_compute_is_expired')
-    
-    @api.depends('deadline')
-    @api.multi
-    def _compute_is_expired(self):
-        for record in self:
-            record.is_expired = record.deadline < fields.Datetime.now()
+```python
+# models.py
+is_expired = fields.Boolean(u'已过期', compute='_compute_is_expired')
+
+@api.depends('deadline')
+@api.multi
+def _compute_is_expired(self):
+    for record in self:
+        record.is_expired = record.deadline < fields.Datetime.now()
+```
 
 计算字段其实和其他字段一样，只不过多了一个 `compute` 属性，它的值是计算这个字段值的方法名。我们来看一下对应的方法 `_compute_is_expired` 头顶上的 `@api.depends` 这个装饰器，它接受了一个参数 `deadline`，表示的是 `is_expired` 这个字段的计算会用到 `deadline` 这个字段的值（我们需要用它的值和当前时间进行比较），如果一个计算字段会用到多个其他字段的值，这里就需要以逗号分隔，将用到的值的字段名依次传入装饰器中。
 
@@ -82,30 +92,34 @@ keywords: Odoo, Tutorial, 基础教程
 
 其中大家可能会有疑问的应该是当前时间的获取，为什么不是用 `datetime.now()` 吧？实际上获取当前时间用的也是这个方法，只不过 Odoo 的 ORM 替我们封装了一层，`fields.Datetime.now()` 是类 `Datetime` 的静态方法：
 
-    # fields.py
-    class Datetime(Field):
-        type = 'datetime'
-        column_type = ('timestamp', 'timestamp')
-        column_cast_from = ('date',)
-    
-        @staticmethod
-        def now(*args):
-            """ Return the current day and time in the format expected by the ORM.
-                This function may be used to compute default values.
-            """
-            return datetime.now().strftime(DATETIME_FORMAT)
+```python
+# fields.py
+class Datetime(Field):
+    type = 'datetime'
+    column_type = ('timestamp', 'timestamp')
+    column_cast_from = ('date',)
+
+    @staticmethod
+    def now(*args):
+        """ Return the current day and time in the format expected by the ORM.
+            This function may be used to compute default values.
+        """
+        return datetime.now().strftime(DATETIME_FORMAT)
+```
 
 好的，这里先不过多纠结细节问题，现在我们已经可以计算出来每个待办事项是否已经过期了，那要怎么去用这个计算字段呢？我们打开视图文件来加点东西上去：
 
-    # views.xml
-    <field name="arch" type="xml">
-        <tree string="Todo" decoration-danger="is_expired">
-            <field name="name"/>
-            <field name="deadline"/>
-            <field name="is_done"/>
-            <field name="is_expired" invisible="True"/>
-        </tree>
-    </field>
+```xml
+<!-- views.xml -->
+<field name="arch" type="xml">
+    <tree string="Todo" decoration-danger="is_expired">
+        <field name="name"/>
+        <field name="deadline"/>
+        <field name="is_done"/>
+        <field name="is_expired" invisible="True"/>
+    </tree>
+</field>
+```
 
 在视图中我们把 `is_expired` 字段加了进去，并且还加上了属性 `invisible`，这个属性的作用是将当前字段隐藏起来，因为这里我们不希望用户看到这个字段的值，而是将结果反映在颜色上。然后我们再看到 `<tree />` 标签多了一个属性 `decoration-danger`，这个属性可以接受表达式或字段名作为值，当结果为真时，这个属性就会生效，将 TreeView 中满足表达式的行以红色标记，实际的效果如下：
 

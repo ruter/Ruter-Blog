@@ -81,7 +81,10 @@ is_expired = fields.Boolean(u'已过期', compute='_compute_is_expired')
 @api.multi
 def _compute_is_expired(self):
     for record in self:
-        record.is_expired = record.deadline < fields.Datetime.now()
+        if record.deadline:
+            record.is_expired = record.deadline < fields.Datetime.now()
+        else:
+            record.is_expired = False
 ```
 
 计算字段其实和其他字段一样，只不过多了一个 `compute` 属性，它的值是计算这个字段值的方法名。我们来看一下对应的方法 `_compute_is_expired` 头顶上的 `@api.depends` 这个装饰器，它接受了一个参数 `deadline`，表示的是 `is_expired` 这个字段的计算会用到 `deadline` 这个字段的值（我们需要用它的值和当前时间进行比较），如果一个计算字段会用到多个其他字段的值，这里就需要以逗号分隔，将用到的值的字段名依次传入装饰器中。
@@ -89,6 +92,8 @@ def _compute_is_expired(self):
 而 `@api.multi` 则表示该方法中的 `self` 是一个记录集（多个实例的集合），如果不理解，可以暂时不深究，到后面自然会知道这里的实际用法。
 
 再来看看实际的计算逻辑部分，只有一个循环以及一条赋值语句，刚刚已经提到过这里的 `self` 表示一个记录集，我们需要对这个记录集里的每一条记录进行计算，判断这个待办事项是否已经过期，这里的 `record` 就是每一条记录的实例对象，我们用这条记录的 `deadline` 的值和当前时间 `fields.Datetime.now()` 进行比较，然后将结果赋值给字段 `is_expired`，就是这么简单。
+
+**PS: 这里我们对 `deadline` 进行了判断，是因为如果没有设置截止时间，又或者是在新建代办事项时，这里的 `deadline` 会是一个布尔值，是不能和时间字符串进行比较的。**
 
 其中大家可能会有疑问的应该是当前时间的获取，为什么不是用 `datetime.now()` 吧？实际上获取当前时间用的也是这个方法，只不过 Odoo 的 ORM 替我们封装了一层，`fields.Datetime.now()` 是类 `Datetime` 的静态方法：
 

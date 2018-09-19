@@ -104,9 +104,9 @@ URL Action 用来打开一个网页链接，十分简单的一种动作类型：
 
 ```xml
     <record id="action_open_google" model="ir.actions.act_url">
-    		<field name="name">打开谷歌</field>
-    		<field name="target">new</field>
-    		<field name="url">https://google.com</field>
+    	<field name="name">打开谷歌</field>
+    	<field name="target">new</field>
+    	<field name="url">https://google.com</field>
     </record>
 ```
 

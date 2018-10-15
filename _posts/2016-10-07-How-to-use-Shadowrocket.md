@@ -32,7 +32,7 @@ description: 用小火箭带你跨越高墙
 前面说明里已经提到了`Shadowrocket`和`Shadowsocks`了，这两样东西当然是必不可少的了，除此之外还需要一台「iOS 9」以上的iPhone或iPad
 
 - iPhone或iPad（iOS 9+）
-- Shadowrocket（App Store 购买 ¥6）
+- [Shadowrocket](https://itunes.apple.com/us/app/shadowrocket/id932747118)（非国区 App Store 购买 ~~¥6~~ $2.99）
 - Shadowsocks 账号一枚（自己搭建或购买）
 
 # 基本配置
@@ -65,12 +65,14 @@ description: 用小火箭带你跨越高墙
 
 ![规则配置](/images/Shadowrocket/config.png)
 
-我们可以从二维码、iCloud Drive和Wi-Fi导入配置，也可以从远程文件下载导入，网上有很多规则配置文件可供下载使用，如[Abclite](http://www.abclite.cn/Abclite_SR.conf)的配置文件
+我们可以从二维码、iCloud Drive和Wi-Fi导入配置，也可以从远程文件下载导入，网上有很多规则配置文件可供下载使用，如 [Shadowrocket-ADBlock-Rules](https://github.com/h2y/Shadowrocket-ADBlock-Rules) 这个仓库里提供的配置文件
 
-这里将演示通过远程文件来添加配置，点击「添加配置」，然后输入Abclite提供的配置文件的地址
+这里将演示通过远程文件来添加配置，点击「添加配置」，然后输入上述仓库提供的「黑名单过滤 + 广告」配置文件的地址
+
+**PS: 截图未更新地址，使用文章提供的最新规则地址即可**
 
 ```
-http://www.abclite.cn/Abclite_SR.conf
+https://raw.githubusercontent.com/h2y/Shadowrocket-ADBlock-Rules/master/sr_top500_banlist_ad.conf
 ```
 
 ![添加远程配置文件](/images/Shadowrocket/down.png)
@@ -129,4 +131,4 @@ FINAL,DIRECT
 
 **注意：**若未作说明，则本文为「[**TNK**](http://ruterly.com/)」原创。转载务必注明[出处](http://ruterly.com/2016/10/07/How-to-use-Shadowrocket/)。
 
-本文永久地址：http://ruterly.com/2016/10/07/How-to-use-Shadowrocket/
+本文永久地址：http://ruterly.com/2016/10/08/How-to-use-Shadowrocket/

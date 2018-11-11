@@ -180,6 +180,8 @@ access_todo_category_user,todo.category.user,model_todo_category,group_todo_user
 
 就这么简单，更新模块之后刷新浏览器看看，「分类」菜单是不是已经被隐藏起来了呢，而管理员账户依然可以看到该菜单。除了菜单外，在视图的字段上也可以通过添加属性 `groups` 达到针对不同的用户组隐藏相关字段的目的。
 
+以上就是这篇教程的全部内容了，老规矩，代码都在 GitHub 仓库「[Odoo-Tutorial-Demo](https://github.com/ruter/Odoo-Tutorial-Demo)」中。
+
 # 写在最后
 
 虽说这是「Odoo 基础教程系列」的最后一篇内容了，但是这不意味着之后不会再写 Odoo 相关的内容了，感谢大家一直以来的支持，虽然很小众，但是也有不少小伙伴给予了一些正面的鼓励，虽然更新速度很慢很慢，但是这个系列终于还是完成啦！自我感觉还是有很多写得不好的地方，希望以后可以写得更好~

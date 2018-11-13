@@ -1,9 +1,11 @@
 - name: TNK
-  url: http://ruterly.com
+  url: https://ruterly.com
 
 - name: SunnyRx's Blog
-  url: http://www.sunnyrx.com/
+  url: https://sunnyrx.com/
 
 - name: Zero's Blog
   url: http://talesofwing.github.io/
 
+- name: Gzp's Blog
+  url: https://elfgzp.cn

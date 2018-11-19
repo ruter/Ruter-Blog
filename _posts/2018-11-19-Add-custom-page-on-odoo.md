@@ -1,6 +1,6 @@
 ---
 layout: post
-title: template page
+title: 在 Odoo 中添加自定义页面
 categories: [Odoo, Tutorial]
 description: 如何在 Odoo 中创建自定义页面并引用第三方库
 keywords: odoo, tutorial

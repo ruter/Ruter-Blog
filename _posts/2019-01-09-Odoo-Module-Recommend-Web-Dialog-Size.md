@@ -126,6 +126,8 @@ opened: function(handler) {
 
 重点来了，Odoo 的前端用到的一个基础框架就是 [jQuery UI]([http://jqueryui.com](http://jqueryui.com/))，也就是说里面的 Widgets 和各种效果以及工具方法我们都可以在自定义 Widget 或编写扩展的时候用上，在准备实现某些相关的功能前，不妨先看看官方文档，说不定就省了很多的功夫呢🤓
 
+![TNK-Studio 公众号](/images/mp_qrcode.jpg)
+
 ---
 
 ![知识共享许可协议](https://i.creativecommons.org/l/by-nc-nd/3.0/cn/88x31.png)

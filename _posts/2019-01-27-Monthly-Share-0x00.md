@@ -12,7 +12,7 @@ keywords: share, article
 
 CSS-Tricks 的创建者兼 CodePen 联合创始人 Chris Coyier 所写的他是如何使用 Notion 的文章。我很早之前也写过一篇关于 Notion 的文章，感兴趣的话可以在这里查看，里面的部分内容已经不再适用于当前版本的 Notion（它变得更好了😉）
 
-## [用的知识，告诉你人们为什么喜欢使用「清单」](https://www.uisdc.com/like-to-use-list)
+## [用心理学的知识，告诉你人们为什么喜欢使用「清单」](https://www.uisdc.com/like-to-use-list)
 
 清单明确了任务的最低要求，它大大提升了人们的接受度与复杂性操作的体验，从而促使人们高效采取行动。
 

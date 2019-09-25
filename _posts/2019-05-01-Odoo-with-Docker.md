@@ -148,7 +148,7 @@ postgres_1  | LOG:  autovacuum launcher started
 当容器启动成功后，我们可以运行以下命令打开 PostgreSQL，之后创建一个新的数据库用户：
 
 ```shell
-$ docker-compose postgres psql -U postgres
+$ docker-compose exec postgres psql -U postgres
 psql (9.5.16)
 Type "help" for help.
 

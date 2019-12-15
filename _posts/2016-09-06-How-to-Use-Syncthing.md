@@ -3,7 +3,7 @@ title: 「玩物志」Syncthing的安装与使用
 date: 2016-09-06 12:56:43
 toc: true
 keywords: Syncthing, Cloud
-categories: [Tutorial, Server]
+categories: [Tutorial, Server, 玩物志]
 description: 「玩物志」系列之创建自己的私密网盘
 ---
 

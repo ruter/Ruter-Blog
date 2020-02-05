@@ -23,37 +23,37 @@ keywords: Odoo, 模块
 
 首先要做的当然是安装模块了，然后需要在菜单「设置 → 技术 → 层级审批 → 层级定义」中创建审批规则，这里的审批规则相当于我们常说的审批流中的审批节点，每一个层级都是一个审批节点。
 
-![Odoo%20Base%20Tier%20Validation/Untitled.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled.png)
+![Odoo%20Base%20Tier%20Validation/Untitled.png](/images/Odoo/base_tier_validation/Untitled.png)
 
 如果找不到菜单，请不要忘记激活 Odoo 的开发者模式。主要的规则配置项都已经在上图中进行了标注说明，另外需要说明的是配置最后的定义和定义域，这里会根据填写的 domain 过滤出适用于当前审批规则的记录集，换言之，只要可以通过定义的域匹配到的记录，都需要根据当前审批规则进行审批。
 
 为了进行演示，这里创建了两条采购订单的审批规则，这里需要特意说明一点，按序列顺序审批时，序列值越大，审批顺序越靠前。
 
-![Odoo%20Base%20Tier%20Validation/Untitled%201.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 1.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%201.png](/images/Odoo/base_tier_validation/Untitled 1.png)
 
 接着打开菜单「采购 → 询价单」列表，并点开任意一条示例数据，点击「请求验证」按钮提交审批，下图为提交审批后的页面
 
-![Odoo%20Base%20Tier%20Validation/Untitled%202.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 2.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%202.png](/images/Odoo/base_tier_validation/Untitled 2.png)
 
 此时会看到表单顶部出现了「这个采购订单需要 验证。」的提示信息，因为当前登录的用户是审批规则中的「经理」，属于后审批的用户，所以无法对当前记录进行审批操作。这里将审批规则中「经理」的审批序列值调整一下，然后打开另一条询价单提交审批
 
-![Odoo%20Base%20Tier%20Validation/Untitled%203.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 3.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%203.png](/images/Odoo/base_tier_validation/Untitled 3.png)
 
 可以看到审批列表中「经理」的审批排在了前面，然后顶部也多出了两个审批操作按钮，点击「验证」或「拒绝」时，会根据审批规则里是否勾选了选项「Comment」决定是否弹出备注的输入框
 
-![Odoo%20Base%20Tier%20Validation/Untitled%204.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 4.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%204.png](/images/Odoo/base_tier_validation/Untitled 4.png)
 
 当前用户审批通过后，审批列表会发生变化，记录审批状态和备注等信息
 
-![Odoo%20Base%20Tier%20Validation/Untitled%205.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 5.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%205.png](/images/Odoo/base_tier_validation/Untitled 5.png)
 
 如果需要审批的记录，在未完全审批通过时强行提交，会发生什么？
 
-![Odoo%20Base%20Tier%20Validation/Untitled%206.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 6.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%206.png](/images/Odoo/base_tier_validation/Untitled 6.png)
 
 你会发现如上图的提示，所以还是好好地等待审批流程走完吧。如果你有留意到右上角系统托盘位置的话，你会发现所有需要当前用户审批的记录数都会在这里出现，点击打开后可以看见对应需要审批的记录类型和各自等待审批的数量
 
-![Odoo%20Base%20Tier%20Validation/Untitled%207.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 7.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%207.png](/images/Odoo/base_tier_validation/Untitled 7.png)
 
 # 适用场景
 
@@ -61,7 +61,7 @@ keywords: Odoo, 模块
 
 但是对于更复杂一些的审批流程，例如需要动态指定审批人这种，只靠这个模块是不够的，还好社区里已经有了一个更高级的模块 [Base Tier Validation Formula](https://github.com/OCA/server-ux/tree/12.0/base_tier_validation_formula) 可以作为补充，让你可以通过 Python 代码来动态指定审批人，除此之外，规则对应的审批记录也可以通过代码来进行指定
 
-![Odoo%20Base%20Tier%20Validation/Untitled%208.png](/images/Odoo/base_tier_validation/Export-ad7b4e3d-23ed-4ed8-9361-f9b13945a5df/Odoo Base Tier Validation/Untitled 8.png)
+![Odoo%20Base%20Tier%20Validation/Untitled%208.png](/images/Odoo/base_tier_validation/Untitled 8.png)
 
 通过以上两个模块的组合使用，基本上常见的审批流程都能覆盖了，如果还有更复杂的审批流呢？那很抱歉，只能自己动手了，这两个模块是非常好的参考，如果有更复杂的需求，可以基于它们进行扩展开发。
 

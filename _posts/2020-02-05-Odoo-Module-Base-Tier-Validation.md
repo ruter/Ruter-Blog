@@ -82,7 +82,7 @@ class TierDefinition(models.Model):
         return res
 ```
 
-然后在需要添加审批功能的模型中继承 `tier.validation` 模型，并设置 `_state_field`, `_state_from`, `_state_to` 及 `_cancel_state` 这是个属性
+然后在需要添加审批功能的模型中继承 `tier.validation` 模型，并设置 `_state_field`, `_state_from`, `_state_to` 及 `_cancel_state` 这四个属性
 
 ```python
 class PurchaseOrder(models.Model):

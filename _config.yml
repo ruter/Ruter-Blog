@@ -77,7 +77,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: ruter/TNK-Blog
+repository: ruter/ruter.github.io
 
 # ---------------- #
 #      Comments    #

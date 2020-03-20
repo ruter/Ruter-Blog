@@ -1,5 +1,5 @@
 backend:
-    name: Ruter's Blog
+    name: github
     repo: ruter/ruter.github.io # Path to your GitHub repository
     branch: cms # Branch to update (optional; defaults to master)
 media_folder: 'images/uploads'

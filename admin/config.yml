@@ -17,6 +17,6 @@ collections:
       - {label: "SubTitle", name: "subtitle", widget: "string", tagname: "h2"}
       - {label: "Cover", name: "cover", widget: "image", allow_multiple: false}
       - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
-      - {label: "Tags", name: "tags", widget: "string"}
-      - {label: "Color", name: "color", widget: "string"}
+      - {label: "Categories", name: "categories", widget: "string"}
+      - {label: "Keywords", name: "keywords", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

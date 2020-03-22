@@ -8,7 +8,7 @@ collections:
     label: 'Posts'
     label_singular: "Post" # Used in the UI, ie.: "New Post"
     folder: '_posts/'
-    sort: "date:desc" # Default is title:asc
+    sort: "title:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:

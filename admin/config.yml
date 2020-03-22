@@ -14,7 +14,7 @@ collections:
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Categories", name: "categories", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
       - {label: "Keywords", name: "keywords", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

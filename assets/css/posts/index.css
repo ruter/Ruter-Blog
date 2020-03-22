@@ -123,3 +123,7 @@
     background-color: #777;
     border-radius: 10px;
 }
+
+.notion-container > div.notion-page-content {
+    padding: 0px 0px 5vh !important;
+}

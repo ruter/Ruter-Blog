@@ -8,15 +8,13 @@ collections:
     label: 'Posts'
     label_singular: "Post" # Used in the UI, ie.: "New Post"
     folder: '_posts/'
-    sort: "date:desc" # Default is title:asc
+    sort: "title:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "SubTitle", name: "subtitle", widget: "string", tagname: "h2"}
-      - {label: "Cover", name: "cover", widget: "image", allow_multiple: false}
-      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
       - {label: "Categories", name: "categories", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
       - {label: "Keywords", name: "keywords", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}

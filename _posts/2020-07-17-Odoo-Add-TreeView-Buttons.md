@@ -72,6 +72,15 @@ odoo.define('user.customize.tree', function (require) {
 
 ![添加自定义按钮后的用户列表视图](/images/Odoo/add-btn-tree-view.png)
 
+可以看到在用户列表视图中新增了两个按钮，分别位于最前和最后，点击它们将会弹出一个警告框。
+
+这是在列表视图上添加新按钮最简单粗暴的实现方式，除了直接在 Controller 中重载 `renderButtons` 方法外，我们还能通过 Controller 的 `buttons_template` 属性引入自定义的模板，并且通过 `events` 属性为按钮绑定事件。如果你想查看更具体的例子，可以查看以下模块的实现:
+
+- `/account/static/src/js/bills_tree_upload.js` 中的 `BillsListController`
+- `/stock/static/src/js/inventory_validate_button_controller.js` 中的 `InventoryValidationController`
+
+如果有问题，欢迎留言告诉我。
+
 ---
 
 **本文采用** [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh) 许可协议。转载或引用时请遵守协议内容！

@@ -193,7 +193,9 @@ class IrHttp(models.AbstractModel):
 
 合并步骤很简单，就是遍历要下载的 PDF 将它的每一页都和水印文件合并起来，然后再输出即可。
 
-上面就是全部的实现了，如果你想要直接使用这个模块或者下载完整的源码，可以前往[这里](https://github.com/ruter/Odoo-Tutorial-Demo/tree/14.0/pdf_watermark)查看或下载；如果你想查看完整的 commits 信息，可以查看[这个 PR](https://github.com/ruter/Odoo-Tutorial-Demo/pull/6) 里的内容。
+上面就是全部的实现了，安装模块之后，可以在开启开发者模式后打开「设置——技术——附件」菜单，创建并上传一个 PDF 文件，然后再下载查看是否成功添加上了水印。
+
+如果你想要直接使用这个模块或者下载完整的源码，可以前往[这里](https://github.com/ruter/Odoo-Tutorial-Demo/tree/14.0/pdf_watermark)查看或下载；如果你想查看完整的 commits 信息，可以查看[这个 PR](https://github.com/ruter/Odoo-Tutorial-Demo/pull/6) 里的内容。
 
 ### 扩展阅读
 
